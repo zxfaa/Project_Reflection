@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce228a6001d0f7a4ca3be2e903119eca, type: 3}
+  m_Name: SubtitleData
+  m_EditorClassIdentifier: 
+  subtitleGroups:
+  - triggerName: SubTitle1
+    subtitles:
+    - text: "\u5582\uFF0C\u59B3\u53EB\u4EC0\u9EBC\u540D\u5B57\u554A\uFF1F"
+      displayDuration: 1.5
+    - text: "\u4E0D\u7528\u4E86\uFF0C\u59B3\u53EB...\u662F\u5427\uFF1F\u6211\u6703\u8A18\u4F4F\u7684"
+      displayDuration: 1.5
+  - triggerName: SubTitle2
+    subtitles:
+    - text: "\u7576\u7E3D\u52D9\u53EA\u8CA0\u8CAC\u6536\u9322\u3001\u7BA1\u6559\u5BA4\u9470\u5319\u800C\u5DF2\uFF0C\u59B3\u5C31\u8A66\u8457\u7576\u770B\u770B\u3002"
+      displayDuration: 1.5
+    - text: "\u4E0D\u898B\u4E86...\u54EA\u88E1\u90FD\u627E\u4E0D\u5230...\u660E\u660E\u5230\u8655\u90FD\u627E\u904E\u4E86"
+      displayDuration: 1.5
+  - triggerName: SubTitle3
+    subtitles:
+    - text: "\u8001\u5E2B\uFF0C.....\u597D\u50CF\u4E0D\u898B\u4E86..."
+      displayDuration: 1.5
+    - text: "...\u6240\u4EE5\u5462\uFF1F\u59B3\u60F3\u5230\u600E\u9EBC\u89E3\u6C7A\u4E86\u55CE\uFF1F"
+      displayDuration: 1.5

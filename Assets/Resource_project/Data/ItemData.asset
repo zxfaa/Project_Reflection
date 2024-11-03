@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df87189ce5e2b354faf36bbd2e5d0fcc, type: 3}
+  m_Name: ItemData
+  m_EditorClassIdentifier: 
+  items:
+  - itemName: "\u73ED\u7D1A\u5EA7\u4F4D\u8868"
+    itemIcon: {fileID: 21300000, guid: b917b52ac97d6244e806e2e674b14b30, type: 3}
+    IsInteration: 0
+    itemText: "43\u300155\u300120\u300166\u300101\u300102\r\n\u4F9D\u7A00\u898B\u5F97\u5176\u4E2D\u5176\u4E2D\u4E00\u884C\u7684\u6587\u5B57\uFF0C\u5269\u4E0B\u7684\u90FD\u5DF2\u6BC0\u640D\r\n\u5176\u4E2D02\u88AB\u756B\u4E0A\u4E86\u661F\u865F\uFF0C20\u662F\u4E09\u89D2\u5F62\u7B26\u865F\uFF0C55\u5247\u662F\u83F1\u5F62\uFF0C\u4E0D\u77E5\u9053\u662F\u4EC0\u9EBC\u610F\u601D\u3002\r"
+    prefab: {fileID: 4472075760976398172, guid: df55809f6c7cabd4bafa52cd0a8da59d, type: 3}
+    itemEffect: {fileID: 0}
+    index: 0
+    stackSize: 0
+  - itemName: "\u5E79\u90E8\u624B\u518A"
+    itemIcon: {fileID: 7482667652216324306, guid: 6c93173e2f9cfda45a6c66e95827198e, type: 3}
+    IsInteration: 0
+    itemText: "\u4E00\u672C\u7834\u820A\u7684\u624B\u518A\uFF0C\u4E0A\u982D\u5BEB\u5230\u95DC\u65BC\u5E79\u90E8\u7684\u8077\u8CAC\r\n\u73ED\u9577\u8CA0\u8CAC\u73ED\u7D1A\u65E5\u5E38\u904B\u4F5C\u548C\u7BA1\u7406\u73ED\u7D1A\u9470\u5319\u3002\r\n\u526F\u73ED\u9577\u5354\u52A9\u73ED\u9577\u4E26\u5728\u5176\u7F3A\u5E2D\u6642\u4EE3\u7406\u8077\u8CAC\u3002\r\n\u7E3D\u52D9\u80A1\u9577\u9700\u7BA1\u7406\u73ED\u7D1A\u9470\u5319\u4EE5\u53CA\u73ED\u8CBB\uFF0C\u5354\u52A9\u540C\u5B78\u501F\u7528\u5668\u6750\u3002\r\n\u5269\u4E0B\u7684\u5DF2\u7D93\u4E0D\u53EF\u95B1\u8B80\u4E86\u3002\r"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 1
+    stackSize: 0
+  - itemName: "\u73ED\u8CBB\u7684\u4FE1\u5C01"
+    itemIcon: {fileID: 21300000, guid: 2490d5ece45711d47b182a71bc290532, type: 3}
+    IsInteration: 0
+    itemText: "\u4F48\u6EFF\u8936\u76BA\u7684\u4FE1\u5C01\u888B\uFF0C\u88CF\u982D\u5DF2\u7D93\u7A7A\u4E86\r\n\u751A\u81F3\u4E0A\u982D\u9084\u6709\u4E00\u4E9B\u6C34\u75D5\u3002\r"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 2
+    stackSize: 0
+  - itemName: "\u6559\u5BA4\u9470\u5319"
+    itemIcon: {fileID: 7482667652216324306, guid: 6c93173e2f9cfda45a6c66e95827198e, type: 3}
+    IsInteration: 0
+    itemText: "\u4E0A\u982D\u9084\u6709\u4E00\u5F35\u8CBC\u7D19\uFF0C\u5BEB\u8457\u4E00\u5E74\u4E09\u73ED"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 3
+    stackSize: 0
+  - itemName: "\u93E1\u5B50\u788E\u7247"
+    itemIcon: {fileID: 21300000, guid: 249a53f7067ae8a4697b94399457ac46, type: 3}
+    IsInteration: 0
+    itemText: "\u7834\u640D\u7684\u93E1\u5B50\u788E\u7247"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 11400000, guid: 379d50eaf8db4764d859f4b3f71bc9e1, type: 2}
+    index: 4
+    stackSize: 0
+  - itemName: "\u7D19\u689D"
+    itemIcon: {fileID: 21300000, guid: f42065a7e531c1049b7db654f62dc7f7, type: 3}
+    IsInteration: 0
+    itemText: "\u88AB\u4E1F\u5728\u5783\u573E\u6876\u7684\u7D19\u689D\n\u4E0D\u6127\u662F\u8001\u4EBA\n\u7E3D\u662F\u628A\u91CD\u8981\u6771\u897F\u4E82\u4E1F"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 5
+    stackSize: 0
+  - itemName: "\u611F\u8B1D\u72C0"
+    itemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+    IsInteration: 0
+    itemText: "\u4E0D\u77E5\u9053\u611F\u8B1D\u8AB0"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 6
+    stackSize: 0
+  - itemName: "\u925B\u7B46"
+    itemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+    IsInteration: 0
+    itemText: "\u5C31\u662F\u652F\u7B46"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 7
+    stackSize: 0
+  - itemName: "\u7834\u820A\u5C0F\u672C\u5B50"
+    itemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+    IsInteration: 0
+    itemText: "\u745F\u745F\u5C0F\u672C\u5B50"
+    prefab: {fileID: 3773873425157995729, guid: d72d9f0cbebbdcd4daec5e3b14ff00db, type: 3}
+    itemEffect: {fileID: 0}
+    index: 8
+    stackSize: 0
+  - itemName: "\u92F0\u8F1D\u77F3"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u7C89\u7D05\u8272\uFF0C\u6676\u72C0\n\u91CD\u91CF\uFF1A14\u514B\n\u9AD4\u7A4D\uFF1A5"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 9
+    stackSize: 0
+  - itemName: "\u7D2B\u6676"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u7D2B\u8272\uFF0C\u73BB\u7483\u4E00\u822C\u7684\u8868\u9762\uFF0C\u7A1C\u7A1C\u89D2\u89D2\n\u91CD\u91CF\uFF1A15\u514B\n\u9AD4\u7A4D\uFF1A5"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 10
+    stackSize: 0
+  - itemName: "\u77F3\u82F1"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u767D\u8272\uFF0C\u6C34\u6676\u4E00\u822C\n\u91CD\u91CF\uFF1A12\u514B\n\u9AD4\u7A4D\uFF1A6"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 11
+    stackSize: 0
+  - itemName: "\u7956\u6BCD\u7DA0"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u6DF1\u7DA0\u8272\uFF0C\u534A\u900F\u660E\u3001\u73BB\u7483\u5149\u6FA4\n\u91CD\u91CF\uFF1A10\u514B\n\u9AD4\u7A4D\uFF1A4"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 12
+    stackSize: 0
+  - itemName: "\u6A44\u6B16\u77F3"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u6DFA\u7DA0\u8272\uFF0C\u534A\u900F\u660E\n\u91CD\u91CF\uFF1A14\u514B\n\u9AD4\u7A4D\uFF1A6"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 13
+    stackSize: 0
+  - itemName: "\u7D05\u746A\u7459"
+    itemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+    IsInteration: 0
+    itemText: "\u7D05\u8272\uFF0C\u8CEA\u5730\u7D30\u81A9\uFF0C\u8272\u5F69\u9BAE\u8277\n\u91CD\u91CF\uFF1A9\u514B\n\u9AD4\u7A4D\uFF1A6"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 14
+    stackSize: 0
+  - itemName: "\u8C93\u773C\u77F3"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u91D1\u9EC3\u7DA0\u8272\uFF0C\u73BB\u7483\u72C0\n\u91CD\u91CF\uFF1A30\u514B\n\u9AD4\u7A4D\uFF1A4"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 15
+    stackSize: 0
+  - itemName: "\u900F\u8F1D\u77F3"
+    itemIcon: {fileID: 21300000, guid: 83770fdf39394934280a5c2d683a6aee, type: 3}
+    IsInteration: 0
+    itemText: "\u7070\u8272\u3001\u96F2\u9727\u72C0\n\u91CD\u91CF\uFF1A30\u514B\n\u9AD4\u7A4D\uFF1A4"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 16
+    stackSize: 0
+  - itemName: "\u4E00\u672C\u66F8"
+    itemIcon: {fileID: 21300000, guid: b917b52ac97d6244e806e2e674b14b30, type: 3}
+    IsInteration: 0
+    itemText: "\u66F8\u88E1\u9762\u7528\u4F86\u4F5C\u70BA\u66F8\u7C64\u7528\u7684\u5E36\u5B50\uFF0C\u4E0D\u77E5\u70BA\u4F55\u6372\u5728\u4E00\u8D77\uFF0C\u50CF\u7DDA\u5718\u4E00\u822C\r"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 17
+    stackSize: 0
+  - itemName: "\u786C\u5E63"
+    itemIcon: {fileID: 21300000, guid: b917b52ac97d6244e806e2e674b14b30, type: 3}
+    IsInteration: 0
+    itemText: "\u9322"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 18
+    stackSize: 1
+  - itemName: "\u76D2\u5B50"
+    itemIcon: {fileID: -5062273274115388370, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u76D2\u5B50"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 19
+    stackSize: 1
+  - itemName: "\u624B\u9432"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u624B\u9432"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 20
+    stackSize: 1
+  - itemName: "\u8B8A\u96FB\u7BB1\u9470\u5319"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u5410\u51FA\u4F86\u7684\u9470\u5319"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 21
+    stackSize: 1
+  - itemName: "\u7B2C\u4E00\u6839\u7C89\u7B46"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u7B2C\u4E00\u6839\u7C89\u7B46"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 22
+    stackSize: 1
+  - itemName: "\u7B2C\u4E8C\u6839\u7C89\u7B46"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u7B2C\u4E8C\u6839\u7C89\u7B46"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 23
+    stackSize: 1
+  - itemName: "\u5C0F\u584A\u62FC\u5716"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u5C0F\u584A\u62FC\u5716"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 24
+    stackSize: 1
+  - itemName: "\u86CB\u7CD5"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u86CB\u7CD5"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 25
+    stackSize: 1
+  - itemName: "\u4E3B\u89D2\u7684\u5716\u756B"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 0
+    itemText: "\u4E3B\u89D2\u7684\u5716\u756B"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 26
+    stackSize: 1

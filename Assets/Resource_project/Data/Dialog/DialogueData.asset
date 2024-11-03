@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a213a33f454d074bb2189e2b01175a1, type: 3}
+  m_Name: DialogueData
+  m_EditorClassIdentifier: 
+  dialogues:
+  - dialogueName: "\u4E00\u822C"
+    dialogueIndex: 0
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u751A\u9EBC\u90FD\u6C92\u6709\u3002[w][remove_dialog]"
+  - dialogueName: "\u7372\u5F97\u9053\u5177"
+    dialogueIndex: 1
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u597D\u50CF\u6709\u751A\u9EBC\u6771\u897F\u3002[w][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u4E00\u9192\u4F86\u5728\u5EA7\u4F4D\u4E0A\u6642"
+    dialogueIndex: 2
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u54C8\u554A...[c][wait,2000]\uFF1A\u9019\u88E1\u662F\u54EA\u88E1...
+      [c][wait_2000]\uFF1A\u5B78\u6821\u55CE....\u6211\u600E\u9EBC\u7761\u5230\u73FE\u5728\u624D\u8D77\u4F86...\u8981\u8D95\u5FEB\u56DE\u5BB6\u624D\u5C0D....\u4E0D\u7136\u5ABD\u5ABD\u6703\u64D4\u5FC3\u6211\u7684....[c][wait,2000]
+      [remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u8207\u6559\u5BA4\u5927\u9580\u4E92\u52D5\u5F8C"
+    dialogueIndex: 3
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u9580\u600E\u9EBC\u88AB\u9396\u4F4F\u4E86...\u6211\u8A18\u5F97\u73ED\u4E0A\u90FD\u6709\u6703\u6709\u4EBA\u5C08\u9580\u7BA1\u9470\u5319\uFF0C\u53BB\u627E\u627E\u770B\u5427[c][wait,2000][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u7372\u5F97\u5EA7\u4F4D\u8868\u5F8C"
+    dialogueIndex: 4
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u597D\u50CF\u6709\u751A\u9EBC\u6771\u897F\u3002[r][[\u9EDE\u64CA\u4EE5\u7E7C\u7E8C][w]
+      \uFF1A\u5EA7\u4F4D\u8868\u55CE\uFF0C\u90FD\u662F\u5B78\u865F..\u8981\u600E\u9EBC\u627E\u963F\uFF0C\u9019\u500B\u4EBA\u7684\u9084\u88AB\u52A0\u4E0A\u5E95\u7DDA...\u611F\u89BA\u662F\u5F88\u91CD\u8981\u7684\u4EBA...[c][wait,1500]
+      \uFF1A\u53BB\u627E\u627E\u770B\u597D\u4E86[c][wait,1500] [remove_dialog][c"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u627E\u5230\u73ED\u7D1A\u9470\u5319\u5F8C"
+    dialogueIndex: 5
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u597D\u50CF\u6709\u751A\u9EBC\u6771\u897F\u3002[r][[\u9EDE\u64CA\u4EE5\u7E7C\u7E8C][w]\uFF1A\u7D42\u65BC\u627E\u5230\u4E86\uFF0C\u9019\u6A23\u5C31\u53EF\u4EE5\u96E2\u958B\u4E86\uFF0C\u8D95\u5FEB\u8D70\u5427[c][wait,2000][remove_dialog]e_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u8207\u9435\u9580\u4E92\u52D5\u5F8C"
+    dialogueIndex: 6
+    SaidByPlayer: 1
+    dialogueLines:
+    - "\uFF1A\u592A\u665A\u9192\u4F86\u4E86...\u9435\u9580\u90FD\u88AB\u8B66\u885B\u95DC\u4E0A\u4E86
+      [c][wait,2000]\uFF1A...\u53BB\u770B\u770B\u5C0E\u5E2B\u5BA4\u597D\u4E86\uFF0C\u8AAA\u4E0D\u5B9A\u9084\u6709\u8001\u5E2B\u9084\u6C92\u56DE\u53BB[c][wait,2000][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u9032\u5165\u6559\u5E2B\u8FA6\u516C\u5BA4\u5F8C"
+    dialogueIndex: 7
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u9023\u500B\u4EBA\u5F71\u90FD\u6C92\u6709...\u8981\u600E\u9EBC\u8FA6\u963F..[c][wait,2000]\uFF1A\u4E3B\u4EFB...\u4E3B\u4EFB\u4E00\u5B9A\u6703\u6709\u7684!
+      \u8AAA\u4E0D\u5B9A\u4E3B\u4EFB\u7684\u5EA7\u4F4D\u6703\u6709\u9470\u5319![c][wait,2000][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u8207\u7246\u58C1\u7684\u5E03\u544A\u6B04\u4E92\u52D5\u5F8C"
+    dialogueIndex: 8
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u9ED1\u6F06\u6F06\u7684\uFF0C \u751A\u9EBC\u90FD\u770B\u4E0D\u5230\uFF0C\u8981\u662F\u6709\u5149\u5C31\u597D\u4E86[c][wait,2000][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u9EDE\u64CA\u5C0E\u5E2B\u684C\u4E0A\u7684\u5C0F\u672C\u5B50\u5F8C"
+    dialogueIndex: 9
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u90FD\u7834\u7834\u721B\u721B\u7684\uFF0C\u6839\u672C\u770B\u4E0D\u51FA\u4F86\u5BEB\u751A\u9EBC[c][wait,2000]\uFF1A....\u4F46\u597D\u50CF\u9084\u6709\u7B46\u8DE1\uFF0C\u8AAA\u4E0D\u5B9A\u53EF\u4EE5\u62D3\u5370\u4E4B\u985E\u7684[c][wait,2000][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u65B0\u624B\u6559\u5B78\u5EA7\u6905"
+    dialogueIndex: 10
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u684C\u5B50\u4E0A\u5BEB\u5230\uFF1A\u5B78\u865F\uFF1A54088[w][remove_dialog]"
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u9032\u5165\u5230\u6559\u5E2B\u8FA6\u516C\u5BA4"
+    dialogueIndex: 11
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u9023\u500B\u4EBA\u5F71\u90FD\u6C92\u6709...\u8981\u600E\u9EBC\u8FA6\u963F..
+      [wait,2000][c]\uFF1A\u4E3B\u4EFB...\u4E3B\u4EFB\u4E00\u5B9A\u6703\u6709\u7684!
+      \u8AAA\u4E0D\u5B9A\u4E3B\u4EFB\u7684\u5EA7\u4F4D\u6703\u6709\u9470\u5319! [wait,2000][remove_dialog] "
+  - dialogueName: "\u7B2C\u4E00\u6BB5_\u4E00\u958B\u59CB\u9032\u5165\u5230\u5834\u666F\u4E2D"
+    dialogueIndex: 12
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u9023\u500B\u4EBA\u5F71\u90FD\u6C92\u6709...\u8981\u600E\u9EBC\u8FA6\u963F..
+      [wait,2000][c]\uFF1A\u4E3B\u4EFB...\u4E3B\u4EFB\u4E00\u5B9A\u6703\u6709\u7684!
+      \u8AAA\u4E0D\u5B9A\u4E3B\u4EFB\u7684\u5EA7\u4F4D\u6703\u6709\u9470\u5319! [wait,2000][remove_dialog] "
+  - dialogueName: "\u6253\u958B\u9580"
+    dialogueIndex: 13
+    SaidByPlayer: 1
+    dialogueLines:
+    - "\uFF1A\u6253\u958B\u4E86.. [w][remove_dialog] "
+  - dialogueName: "\u932F\u8AA4\u9053\u5177"
+    dialogueIndex: 14
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u4E0D\u662F\u9019\u500B.. [w][remove_dialog] "
+  - dialogueName: "\u76F4\u63A5\u8207\u9580\u4E92\u52D5"
+    dialogueIndex: 15
+    SaidByPlayer: 1
+    dialogueLines:
+    - "\uFF1A\u9580\u600E\u9EBC\u88AB\u9396\u4F4F\u4E86...\u6211\u8A18\u5F97\u73ED\u4E0A\u90FD\u6709\u6703\u6709\u4EBA\u5C08\u9580\u7BA1\u9470\u5319\uFF0C\u53BB\u627E\u627E\u770B\u5427[w][remove_dialog] "
+  - dialogueName: "\u7B2C\u4E00\u6B21\u8DDF\u9435\u9580\u4E92\u52D5"
+    dialogueIndex: 16
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\uFF1A\u8981\u8F38\u5165\u5BC6\u78BC[w][remove_dialog] "
+  - dialogueName: "\u7B2C\u4E09\u6BB5\u6AC3\u53F0"
+    dialogueIndex: 17
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u5916\u9762\u50B3\u4F86\u4E86\u7570\u6A23\u7684\u8072\u97FF[w]\uFF1A\u597D\u50CF\u6709\u6771\u897F\u6389\u5728\u5730\u4E0A\u7684\u8072\u97F3...\u9322\u55CE\uFF0C\u9084\u662F\u5F48\u73E0?
+      [w][remove_dialog] [remove_dialog] "
+  - dialogueName: "\u7B2C\u4E09\u6BB5\u8B8A\u96FB\u7BB1"
+    dialogueIndex: 18
+    SaidByPlayer: 1
+    dialogueLines:
+    - "\uFF1A\u9396\u4F4F\u4E86...[w][remove_dialog] [remove_dialog] "
+  - dialogueName: "\u5EA7\u4F4D\u5B78\u865F"
+    dialogueIndex: 19
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u684C\u5B50\u4E0A\u5BEB\u5230\uFF1A\u5B78\u865F\uFF1A43\u3002[w][remove_dialog]
+      [remove_dialog] "
+  - dialogueName: "\u7372\u5F97\u6559\u5BA4\u9470\u5319"
+    dialogueIndex: 20
+    SaidByPlayer: 1
+    dialogueLines:
+    - "\uFF1A\u7D42\u65BC\u627E\u5230\u4E86\uFF0C\u9019\u6A23\u5C31\u53EF\u4EE5\u96E2\u958B\u4E86\uFF0C\u8D95\u5FEB\u8D70\u5427\u3002[w][remove_dialog]
+      [remove_dialog] "
+  - dialogueName: "\u958B\u555F\u8B8A\u96FB\u7BB1\u958B\u95DC"
+    dialogueIndex: 21
+    SaidByPlayer: 0
+    dialogueLines:
+    - "\u8D70\u5ECA\u7684\u76E1\u982D\u50B3\u4F86\u4E86\u7570\u6A23\u7684\u8072\u97FF[w][remove_dialog]
+      [remove_dialog] "

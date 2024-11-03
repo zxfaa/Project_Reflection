@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - LevelExit
+  - item-1
+  - NPC1
+  - Collider
+  - ItemUse
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Character
+  - Confiner
+  - Object
+  - Glow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3379161061
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 2463564049
+    locked: 0
+  - name: Character
+    uniqueID: 1081225559
+    locked: 0
+  - name: chat
+    uniqueID: 15822525
+    locked: 0
+  - name: FrontGround
+    uniqueID: 151317253
+    locked: 0
+  - name: Examine
+    uniqueID: 2516769897
+    locked: 0
