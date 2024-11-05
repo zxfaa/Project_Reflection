@@ -6,6 +6,7 @@ public class SettingsController : MonoBehaviour
 {
     [Header("Slider References")]
     public Slider musicVolumeSlider;
+    public Slider gameVolumeSlider;
     public Slider textSpeedSlider;
     public Slider dialogAlphaSlider;
 
@@ -36,6 +37,7 @@ public class SettingsController : MonoBehaviour
 
     // 暫存的設定值
     private float tempMusicVolume;
+    private float tempGameVolume;
     private float tempTextSpeed;
     private float tempDialogAlpha;
 
@@ -55,6 +57,10 @@ public class SettingsController : MonoBehaviour
         musicVolumeSlider.minValue = 0f;
         musicVolumeSlider.maxValue = 1f;
 
+        //設置遊戲音量Slider
+        gameVolumeSlider.minValue = 0f;
+        gameVolumeSlider.maxValue = 1f;
+
         // 設置文字速度 Slider
         textSpeedSlider.minValue = 0f;    // 用於 slider 的顯示範圍
         textSpeedSlider.maxValue = 1f;    // 用於 slider 的顯示範圍
@@ -70,6 +76,7 @@ public class SettingsController : MonoBehaviour
     private void SetupListeners()
     {
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeSliderChanged);
+        gameVolumeSlider.onValueChanged.AddListener(OnGameVolumeSliderChanged);
         textSpeedSlider.onValueChanged.AddListener(OnTextSpeedSliderChanged);
         dialogAlphaSlider.onValueChanged.AddListener(OnDialogAlphaSliderChanged);
 
@@ -93,12 +100,14 @@ public class SettingsController : MonoBehaviour
     private void LoadCurrentSettings()
     {
         musicVolumeSlider.value = SettingsManager.MusicVolume;
+        gameVolumeSlider.value = SettingsManager.GameVoulume;
         // 將實際速度值轉換為 0-1 的 slider 值
-        textSpeedSlider.value = Mathf.InverseLerp(0.1f, 0.005f, SettingsManager.TextSpeed);
+        textSpeedSlider.value = Mathf.InverseLerp(0.02f, 0.005f, SettingsManager.TextSpeed);
         dialogAlphaSlider.value = SettingsManager.DialogAlpha;
         isMuted = SettingsManager.IsMuted;
 
         tempMusicVolume = musicVolumeSlider.value;
+        tempGameVolume = gameVolumeSlider.value;
         tempTextSpeed = textSpeedSlider.value;
         tempDialogAlpha = dialogAlphaSlider.value;
 
@@ -119,13 +128,17 @@ public class SettingsController : MonoBehaviour
             backgroundMusic.volume = value; // 即時預覽音量效果
         }
     }
+    private void OnGameVolumeSliderChanged(float value)
+    {
+        tempGameVolume = value;
+    }
 
     private void OnTextSpeedSliderChanged(float value)
     {
-        // 將 0-1 的 slider 值轉換為 0.1-0.005 的實際速度值
-        // value 為 0 時得到 0.1（最慢）
+        // 將 0-1 的 slider 值轉換為 0.02-0.005 的實際速度值
+        // value 為 0 時得到 0.（最慢）
         // value 為 1 時得到 0.005（最快）
-        tempTextSpeed = Mathf.Lerp(0.1f, 0.005f, value);
+        tempTextSpeed = Mathf.Lerp(0.02f, 0.005f, value);
     }
 
     private void OnDialogAlphaSliderChanged(float value)
@@ -163,6 +176,7 @@ public class SettingsController : MonoBehaviour
     public void OnConfirmSettings()
     {
         SettingsManager.UpdateMusicVolume(tempMusicVolume);
+        SettingsManager.UpdateGameVolume(tempGameVolume);
         SettingsManager.UpdateTextSpeed(tempTextSpeed);
         SettingsManager.UpdateDialogAlpha(tempDialogAlpha);
         SettingsManager.UpdateIsMuted(isMuted);
@@ -190,6 +204,7 @@ public class SettingsController : MonoBehaviour
     public void OnResetToDefaults()
     {
         musicVolumeSlider.value = SettingData.Defaults.MUSIC_VOLUME;
+        gameVolumeSlider.value = SettingData.Defaults.Game_VOLUME;
         textSpeedSlider.value = SettingData.Defaults.TEXT_SPEED;
         dialogAlphaSlider.value = SettingData.Defaults.DIALOG_ALPHA;
     }

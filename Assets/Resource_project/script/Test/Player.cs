@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     private bool facingRight = true;
     public bool isOpeningUI;
+    private bool isPlayingWalkSound = false;
+
     FlowerSystem fs;
 
     void Start()
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
         moveDirection = (targetPosition - (Vector2)transform.position).normalized;
     }
 
+    
     // ����
     void Move()
     {
@@ -71,6 +74,17 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
             moveDirection = Vector2.zero;
+        }
+        if (animator.GetBool("isMoving"))
+        {
+            if (!isPlayingWalkSound)
+            {
+                AudioManager.Instance.PlaySound("Walking");
+            }
+        }
+        else
+        {
+            isPlayingWalkSound = false;
         }
 
         if (moveDirection.x > 0 && !facingRight)
@@ -150,5 +164,10 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
+    }
+    IEnumerator WalkSoundCooldown()
+    {
+        yield return new WaitForSeconds(0.3f); 
+        isPlayingWalkSound = false;
     }
 }

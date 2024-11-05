@@ -11,7 +11,7 @@ public class SaveSystemSecond : MonoBehaviour
     public static SaveSystemSecond Instance { get; private set; }
     [SerializeField] private GameObject playerPrefab;
     private Player currentPlayer;
-     private int currentSlotNumber = 0; // 存檔編號
+    private int currentSlotNumber = 0; // 存檔編號
 
     private Vector2 loadedPosition;
     private int loadedSceneIndex;

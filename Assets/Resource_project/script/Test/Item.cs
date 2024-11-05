@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
     public GameObject instantiatedExaminePrefab;
 
     FlowerSystem fs;
+    private AudioSource pickAudioSource;
 
     private void Reset()
     {
@@ -48,6 +49,7 @@ public class Item : MonoBehaviour
     {
         InteractionManager.Instance.RegisterObject(this);
         fs = FlowerManager.Instance.GetFlowerSystem("default");
+        pickAudioSource = GetComponent<AudioSource>();  // 確保已經添加 AudioSource 組件
     }
 
     // 獲取或創建ExaminePrefab實例
@@ -94,6 +96,12 @@ public class Item : MonoBehaviour
         switch (interactionType)
         {
             case InteractionType.PickUp:
+                //撥放音效
+                if (!pickAudioSource.isPlaying)
+                {
+                    //pickAudioSource.volume = AudioManager.Instance.GetVolume();
+                    pickAudioSource.Play();
+                }                    
                 PickUpItem();
                 break;
             case InteractionType.Examine:
@@ -111,6 +119,14 @@ public class Item : MonoBehaviour
                 break;
             case InteractionType.Others:
                 OtherInteraction();
+                break;
+            case InteractionType.NONE:
+                //撥放音效
+                if (!pickAudioSource.isPlaying)
+                {
+                    //pickAudioSource.volume = AudioManager.Instance.GetVolume();
+                    pickAudioSource.Play();
+                }
                 break;
         }
 
