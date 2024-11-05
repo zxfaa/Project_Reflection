@@ -1,5 +1,5 @@
 [show_button]
-[ui_image,bg_classroom,bg/bg_classroom,0,0,default,uiImageFadeIn_500]
+[ui_image,bg_classroom_front,bg/bg_classroom_front,0,0,default,uiImageFadeIn_100]
 
 [italic]
 午休時間的學生們相互談話、交換彼此的聯繫方式。[w]
@@ -128,7 +128,7 @@
 [italic_end]
 
 [ui_image,bg_black,bg/bg_black,0,0,default,uiImageFadeIn_500]
-[remove,bg_classroom,uiImageFadeOut_300]
+[remove,bg_classroom_front,uiImageFadeOut_300]
 
 
 

@@ -39,12 +39,35 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // 檢查音效是否正在播放
+    public bool IsPlaying()
+    {
+        return audioSource.isPlaying;
+    }
+
+    // 停止現在播放的音效
+    public void StopSound()
+    {
+        audioSource.Stop();
+    }
+
     public void PlaySound(string soundName)
     {
         if (audioClipDictionary.TryGetValue(soundName, out var clip))
         {
-            audioSource.volume = SettingsManager.GameVoulume;  // 設定音量
-            audioSource.clip = clip;                          // 設定音效
+            audioSource.volume = SettingsManager.GameVoulume;
+            audioSource.clip = clip;
+
+            // 如果是走路音效，設定為循環播放
+            if (soundName == "Walking")
+            {
+                audioSource.loop = true;
+            }
+            else
+            {
+                audioSource.loop = false;
+            }
+
             audioSource.Play();
         }
         else

@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
 
     private bool facingRight = true;
     public bool isOpeningUI;
-    private bool isPlayingWalkSound = false;
 
     FlowerSystem fs;
 
@@ -50,6 +49,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        
     }
 
     void RightClick()
@@ -75,17 +75,22 @@ public class Player : MonoBehaviour
             animator.SetBool("isMoving", false);
             moveDirection = Vector2.zero;
         }
+
+        // 音效播放邏輯
         if (animator.GetBool("isMoving"))
         {
-            if (!isPlayingWalkSound)
+            // 如果正在移動，但音效沒在播放（可能是播放完畢或尚未開始）
+            if (!AudioManager.Instance.IsPlaying())
             {
                 AudioManager.Instance.PlaySound("Walking");
             }
         }
         else
         {
-            isPlayingWalkSound = false;
+            // 如果不是在移動狀態，停止音效
+            AudioManager.Instance.StopSound();
         }
+
 
         if (moveDirection.x > 0 && !facingRight)
         {
@@ -164,10 +169,5 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
-    }
-    IEnumerator WalkSoundCooldown()
-    {
-        yield return new WaitForSeconds(0.3f); 
-        isPlayingWalkSound = false;
     }
 }
