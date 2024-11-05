@@ -79,16 +79,14 @@ public class Player : MonoBehaviour
         // 音效播放邏輯
         if (animator.GetBool("isMoving"))
         {
-            // 如果正在移動，但音效沒在播放（可能是播放完畢或尚未開始）
-            if (!AudioManager.Instance.IsPlaying())
+            if (!AudioManager.Instance.IsLoopingSoundPlaying ()) // 確保只在音效未播放時啟動
             {
-                AudioManager.Instance.PlaySound("Walking");
+                AudioManager.Instance.PlayLoopingSound("Walking");
             }
         }
         else
         {
-            // 如果不是在移動狀態，停止音效
-            AudioManager.Instance.StopSound();
+            AudioManager.Instance.StopLoopingSound();
         }
 
 

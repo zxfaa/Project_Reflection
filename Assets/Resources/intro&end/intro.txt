@@ -48,6 +48,7 @@
 解鎖螢幕瀏覽新生訓練的注意事項。[w]
 [italic_end]
 活動中心...應該往這個方向走。[w]
+[async_audio,Walking,audio/Walking,false]
 [hide]
 
 

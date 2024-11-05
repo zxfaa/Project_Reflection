@@ -94,8 +94,7 @@ public class Item : MonoBehaviour
         switch (interactionType)
         {
             case InteractionType.PickUp:
-                //撥放音效
-                                  
+                AudioManager.Instance.PlayOneShot("PickUpThing");
                 PickUpItem();
                 break;
             case InteractionType.Examine:
@@ -115,8 +114,7 @@ public class Item : MonoBehaviour
                 OtherInteraction();
                 break;
             case InteractionType.NONE:
-                //撥放音效
-                
+                AudioManager.Instance.PlayOneShot("PickUpNothing");
                 break;
         }
 

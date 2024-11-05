@@ -721,7 +721,7 @@ namespace Flower{
             string key;
             AudioClip audio;
             bool loop;
-            float volume = 1;
+            float volume = SettingsManager.GameVoulume;
             string effectName = "";
             bool wait = false;
 
