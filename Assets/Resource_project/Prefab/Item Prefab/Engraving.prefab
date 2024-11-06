@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4773817933292843302}
   - component: {fileID: 234611982133997520}
   m_Layer: 5
-  m_Name: Color1
+  m_Name: "\u4E8C\u865F\u7C89\u7B46Button"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4773817933292843302}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6376068685023054148}
+        m_TargetAssemblyTypeName: Engraving, Assembly-CSharp
+        m_MethodName: Draw
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u4E8C\u865F\u7C89\u7B46"
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &826803340375465439
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7625365605243460755}
   - component: {fileID: 3969848713316142599}
+  - component: {fileID: 6376068685023054148}
   m_Layer: 5
   m_Name: Engraving
   m_TagString: Untagged
@@ -165,6 +178,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826803340375465439}
   m_CullTransparentMesh: 1
+--- !u!114 &6376068685023054148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826803340375465439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9bb88d76963154590ee55babb2ab1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorButtons:
+  - {fileID: 234611982133997520}
+  - {fileID: 6268721231822974408}
+  - {fileID: 3389824038790773969}
 --- !u!1 &1037718192657196052
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +285,7 @@ GameObject:
   - component: {fileID: 5829083208502134253}
   - component: {fileID: 6268721231822974408}
   m_Layer: 5
-  m_Name: Color2
+  m_Name: "\u4E09\u865F\u7C89\u7B46Button"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,7 +391,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5829083208502134253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6376068685023054148}
+        m_TargetAssemblyTypeName: Engraving, Assembly-CSharp
+        m_MethodName: Draw
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u4E09\u865F\u7C89\u7B46"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6657692938829092782
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +417,7 @@ GameObject:
   - component: {fileID: 3823150555708847657}
   - component: {fileID: 3389824038790773969}
   m_Layer: 5
-  m_Name: Color3
+  m_Name: "\u4E00\u865F\u7C89\u7B46Button"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,4 +523,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3823150555708847657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6376068685023054148}
+        m_TargetAssemblyTypeName: Engraving, Assembly-CSharp
+        m_MethodName: Draw
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u4E00\u865F\u7C89\u7B46"
+          m_BoolArgument: 0
+        m_CallState: 2

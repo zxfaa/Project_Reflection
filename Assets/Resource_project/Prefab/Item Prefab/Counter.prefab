@@ -62,14 +62,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 1
   itemType: 0
-  dialogueType: 1
+  dialogueType: 0
   examinePrefab: {fileID: 0}
   prefabContainer: {fileID: 0}
   itemData: {fileID: 11400000, guid: ea40602a60443e8478d90bb58e90b3a9, type: 2}
   itemIndices: 14000000
   requireItemName: 
+  requireItemIndex: 0
   isKeyObject: 0
   objectId: 0
+  canExamine: 1
   coustomEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -481,14 +483,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 1
   itemType: 0
-  dialogueType: 1
+  dialogueType: 0
   examinePrefab: {fileID: 0}
   prefabContainer: {fileID: 0}
   itemData: {fileID: 11400000, guid: ea40602a60443e8478d90bb58e90b3a9, type: 2}
   itemIndices: 13000000
   requireItemName: 
+  requireItemIndex: 0
   isKeyObject: 1
   objectId: 0
+  canExamine: 1
   coustomEvent:
     m_PersistentCalls:
       m_Calls: []

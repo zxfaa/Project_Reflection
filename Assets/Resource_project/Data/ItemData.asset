@@ -189,18 +189,18 @@ MonoBehaviour:
     itemEffect: {fileID: 0}
     index: 21
     stackSize: 1
-  - itemName: "\u7B2C\u4E00\u6839\u7C89\u7B46"
+  - itemName: "\u4E00\u865F\u7C89\u7B46"
     itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
     IsInteration: 0
-    itemText: "\u7B2C\u4E00\u6839\u7C89\u7B46"
+    itemText: "\u666E\u901A\u7684\u7C89\u7B46\uFF0C\u8DDF\u5168\u65B0\u7684\u4E00\u6A23"
     prefab: {fileID: 0}
     itemEffect: {fileID: 0}
     index: 22
     stackSize: 1
-  - itemName: "\u7B2C\u4E8C\u6839\u7C89\u7B46"
+  - itemName: "\u4E8C\u865F\u7C89\u7B46"
     itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
     IsInteration: 0
-    itemText: "\u7B2C\u4E8C\u6839\u7C89\u7B46"
+    itemText: "\u666E\u901A\u7684\u7C89\u7B46\uFF0C\u8DDF\u5168\u65B0\u7684\u4E00\u6A23"
     prefab: {fileID: 0}
     itemEffect: {fileID: 0}
     index: 23
@@ -228,4 +228,20 @@ MonoBehaviour:
     prefab: {fileID: 0}
     itemEffect: {fileID: 0}
     index: 26
+    stackSize: 1
+  - itemName: "\u4E09\u865F\u7C89\u7B46"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 1
+    itemText: "\u666E\u901A\u7684\u7C89\u7B46\uFF0C\u8DDF\u5168\u65B0\u7684\u4E00\u6A23"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 27
+    stackSize: 1
+  - itemName: "\u6C34\u4ED9\u756B"
+    itemIcon: {fileID: 5106506731930677999, guid: 1002892c86352544ba7e34c81a2d69bf, type: 3}
+    IsInteration: 1
+    itemText: "\u4E00\u5E45\u7CBE\u7F8E\u7684\u756B\uFF0C\u4E0A\u982D\u7684\u6C34\u4ED9\u6829\u6829\u5982\u751F\uFF0C\u770B\u7684\u51FA\u4F86\u4F5C\u8005\u662F\u500B\u5F88\u53B2\u5BB3\u7684\u756B\u5BB6\u3002"
+    prefab: {fileID: 0}
+    itemEffect: {fileID: 0}
+    index: 28
     stackSize: 1

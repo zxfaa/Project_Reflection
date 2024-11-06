@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 107.936005, y: -58.551987}
+  m_AnchoredPosition: {x: 108.31999, y: -38.879997}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &486736605118141619
@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.630001, y: 8.849999}
+  m_AnchoredPosition: {x: -3.630001, y: 8.85}
   m_SizeDelta: {x: 12.4, y: 5.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4078772030152498145
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6156743526184541815}
   - component: {fileID: 2470575028467103983}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PutStoneOnLibra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.936005, y: -58.551987}
+  m_AnchoredPosition: {x: 68.31999, y: -38.879997}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4899337596322998087
@@ -2401,7 +2401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.414999, y: 8.849999}
+  m_AnchoredPosition: {x: 6.414999, y: 8.85}
   m_SizeDelta: {x: 6.83, y: 5.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &295914478319762873
@@ -3372,7 +3372,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8355297044071122627}
-  - component: {fileID: 4657062830631876050}
   - component: {fileID: 2728553073551043829}
   m_Layer: 5
   m_Name: Libra
@@ -3404,27 +3403,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -55}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &4657062830631876050
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7150559180115435168}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9448898d78f5274c9b84aabcbe7eecb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2728553073551043829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,7 +3415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbf2129bd71024449a09d8b6e40f066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4657062830631876050}
+  animator: {fileID: 6793175631941586642}
   stone: {fileID: 2470575028467103983}
   stoneGram: 0
   gram: 0
@@ -3473,10 +3451,10 @@ RectTransform:
   - {fileID: 9157825068337652859}
   m_Father: {fileID: 7042493440451185363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7413021, y: 0.319284}
-  m_AnchorMax: {x: 0.836, y: 0.43300003}
-  m_AnchoredPosition: {x: -14.599999, y: 0}
-  m_SizeDelta: {x: -0.0000019073486, y: 0}
+  m_AnchorMin: {x: 0.7, y: 0.32}
+  m_AnchorMax: {x: 0.8, y: 0.44}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3921951111454618180
 MonoBehaviour:
@@ -3688,6 +3666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7042493440451185363}
+  - component: {fileID: 6793175631941586642}
   m_Layer: 5
   m_Name: Libra
   m_TagString: Untagged
@@ -3717,6 +3696,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &6793175631941586642
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941854842136072808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9448898d78f5274c9b84aabcbe7eecb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8490657785806094726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3938,10 +3938,10 @@ RectTransform:
   - {fileID: 3676405359094024638}
   m_Father: {fileID: 7042493440451185363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.675, y: 0.319284}
-  m_AnchorMax: {x: 0.90400004, y: 0.5}
-  m_AnchoredPosition: {x: -14.599999, y: -9.3}
-  m_SizeDelta: {x: -0.0000019073486, y: 0}
+  m_AnchorMin: {x: 0.63, y: 0.32}
+  m_AnchorMax: {x: 0.86, y: 0.44}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789098444716677299
 MonoBehaviour:

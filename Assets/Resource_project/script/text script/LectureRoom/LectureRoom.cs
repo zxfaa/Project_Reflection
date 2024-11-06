@@ -30,8 +30,10 @@ public class LectureRoom : MonoBehaviour
     //是否結束
     public static bool MicIsEnd;
 
-    public CanvasGroup backgroundCanvasGroup; // 用於控制透明度
-
+    // 用於控制透明度
+    public CanvasGroup mask; 
+    public CanvasGroup before;
+    public CanvasGroup after;
 
     //InterationSystem 用來關閉此系統
     InteractionSystem interactionSystem;
@@ -47,36 +49,66 @@ public class LectureRoom : MonoBehaviour
     {
         HideAllQuestions();
         fs = FlowerManager.Instance.GetFlowerSystem("default");
+
+        if (interactionSystem == null)
+        {
+            Debug.Log("InteractionSystem can't find");
+        }
         StartLectureRoom();
-        StartCoroutine(FadeInBackground(0.5f)); // 開始淡入背景
+        StartCoroutine(FadeCanvasGroup("mask",0.5f,1)); // 開始淡入背景
+
     }
 
     public void StartLectureRoom()
     {
 
         interactionSystem = FindObjectOfType<InteractionSystem>();
-        if (interactionSystem == null ) 
+        if (interactionSystem == null)
         {
             Debug.Log("InteractionSystem can't find");
         }
         ClearAllInputFields();
         StartCoroutine(HandleProgress());
     }
-    // 背景淡入效果
-    private IEnumerator FadeInBackground(float duration)
-    {
-        float time = 0f;
-        backgroundCanvasGroup.alpha = 0f;  // 開始時透明
 
-        while (time < duration)
+    public IEnumerator FadeCanvasGroup(string canvasGroupName, float duration, float targetAlpha)
+    {
+        CanvasGroup canvasGroup = null;
+        switch (canvasGroupName)
         {
-            time += Time.deltaTime;
-            backgroundCanvasGroup.alpha = Mathf.Lerp(0f, 1f, time / duration);  // 緩慢增大透明度
+            case "mask":
+                canvasGroup = mask;
+                break;
+            case "before":
+                canvasGroup = before;
+                break;
+            case "after":
+                canvasGroup = after;
+                break;
+            default:
+                Debug.LogError("找不到指定名称的 CanvasGroup: " + canvasGroupName);
+                break;
+        }
+        //獲取當前透明度
+        float startAlpha = canvasGroup.alpha;
+
+        //計算透明度變化速度
+        float elapsedTime = 0f;
+
+        //開始淡入or淡出
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            //線性插值
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
             yield return null;
         }
 
-        backgroundCanvasGroup.alpha = 1f;  // 最終設定為完全顯示
+        //確保最後的透明度
+        canvasGroup.alpha = targetAlpha;
     }
+
+
 
     private IEnumerator HandleProgress()
     {
@@ -90,46 +122,53 @@ public class LectureRoom : MonoBehaviour
                         fs.ReadTextFromResource("LectureRoom/LectureRoom");
                         yield return new WaitUntil(() => fs.isCompleted);
                         fs.SetupDialog("PlotDialogPrefab");
-                        fs.SetTextList(new List<string> { "第一題[w] [remove_dialog]" });
+                        fs.SetTextList(new List<string> { "首先是字謎題，請選手將推理出的英文單字，填置答案框中喔![w]第一題[w] [remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.8f));
                         ShowQuestion(currentProgress);
                         break;
 
                     case 1:
-                        fs.SetupDialog("PlayerDialogPrefab");
-                        fs.SetTextList(new List<string> { "第二題[w][remove_dialog]" });
+                        fs.SetupDialog("PlotDialogPrefab");
+                        fs.SetTextList(new List<string> { "再來是填空題，請將缺空中的中文字轉成單字後回答![w]第二題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.5f));
                         ShowQuestion(currentProgress);
                         break;
 
                     case 2:
-                        fs.SetupDialog("PlayerDialogPrefab");
+                        fs.SetupDialog("PlotDialogPrefab");
                         fs.SetTextList(new List<string> { "第三題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.4f));
                         ShowQuestion(currentProgress);
                         break;
                     case 3:
-                        fs.SetupDialog("PlayerDialogPrefab");
+                        fs.SetupDialog("PlotDialogPrefab");
                         fs.SetTextList(new List<string> { "第四題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.3f));
                         ShowQuestion(currentProgress);
                         break;
                     case 4:
-                        fs.SetupDialog("PlayerDialogPrefab");
+                        fs.SetupDialog("PlotDialogPrefab");
                         fs.SetTextList(new List<string> { "第五題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.2f));
                         ShowQuestion(currentProgress);
                         break;
                     case 5:
-                        fs.SetupDialog("PlayerDialogPrefab");
+                        fs.SetupDialog("PlotDialogPrefab");
                         fs.SetTextList(new List<string> { "第六題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0.1f));
                         ShowQuestion(currentProgress);
                         break;
                     case 6:
-                        fs.SetupDialog("PlayerDialogPrefab");
+                        fs.SetupDialog("PlotDialogPrefab");
                         fs.SetTextList(new List<string> { "第七題[w][remove_dialog]" });
                         yield return new WaitUntil(() => fs.isCompleted);
+                        StartCoroutine(FadeCanvasGroup("before", 0.2f, 0f));
                         ShowQuestion(currentProgress);
                         break;
                     case 7:

@@ -65,5 +65,7 @@ public class Chest : MonoBehaviour
     private void HandlePrefabReopened()
     {
         otherStone.SetActive(true);
+        FindObjectOfType<LibraConrtoller>().stoneGram = 60;
+        FindObjectOfType<LibraConrtoller>().LibraAnimate();
     }
 }

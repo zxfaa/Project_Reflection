@@ -24,6 +24,7 @@ public class OpenDoor : MonoBehaviour
     public void UseKey()
     {
         isKeyUsed = true;
+        AudioManager.Instance.PlayOneShot("Key on door s");
         Debug.Log("鑰匙已使用，傳送功能啟用");
     }
 

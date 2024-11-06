@@ -152,6 +152,35 @@ public class PlotSystem : MonoBehaviour
 
         });
 
+        #region 演講廳專用
+        fs.RegisterCommand("FadeImage", (List<string> _params) =>
+        {
+            // 檢查參數是否足夠
+            if (_params.Count < 3)
+            {
+                Debug.LogError("參數不足，需要 CanvasGroup 名稱、持續時間、目標透明度。");
+                return;
+            }
+
+            // 尝试获取 CanvasGroup 名称、持续时间和透明度
+            string canvasGroupName = _params[0];
+            if (!float.TryParse(_params[1], out float duration))
+            {
+                Debug.LogError("無法解析時間，確保第二個參數是正常的浮點數。");
+                return;
+            }
+            if (!float.TryParse(_params[2], out float targetAlpha))
+            {
+                Debug.LogError("無法解析目標透明度，請確保第二個參數是正常的浮點數。");
+                return;
+            }
+            // 开始执行淡入/淡出协程
+            LectureRoom lectureRoom = FindObjectOfType<LectureRoom>();
+
+            StartCoroutine(lectureRoom.FadeCanvasGroup(canvasGroupName, duration, targetAlpha));
+        });
+        #endregion
+
 
         // 檢查 AutoMod 是否存在
         if (AutoMod == null)

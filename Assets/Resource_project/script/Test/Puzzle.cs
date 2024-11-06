@@ -29,7 +29,7 @@ public class Puzzle : MonoBehaviour
         }
 
         emptySlotIndex = puzzlePieces.Count - 1; // 將空白塊放在最後一個位置
-        //ShufflePuzzle(); // 隨機打亂拼圖塊的位置
+        ShufflePuzzle(); // 隨機打亂拼圖塊的位置
         UpdatePuzzleDisplay(); // 更新拼圖顯示
     }
 

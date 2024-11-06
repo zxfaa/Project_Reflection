@@ -16,6 +16,7 @@ public class TeleportTrigger : MonoBehaviour
             {
                 // 觸發傳送
                 manager.TriggerTeleport(teleportIndex, locationId);
+                AudioManager.Instance.PlayOneShot("OpenDoor");
             }
         }
     }

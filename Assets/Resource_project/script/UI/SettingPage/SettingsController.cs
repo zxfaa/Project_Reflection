@@ -102,7 +102,7 @@ public class SettingsController : MonoBehaviour
         musicVolumeSlider.value = SettingsManager.MusicVolume;
         gameVolumeSlider.value = SettingsManager.GameVoulume;
         // 將實際速度值轉換為 0-1 的 slider 值
-        textSpeedSlider.value = Mathf.InverseLerp(0.01f, 0.005f, SettingsManager.TextSpeed);
+        textSpeedSlider.value = Mathf.InverseLerp(0.01f, 0.05f, SettingsManager.TextSpeed);
         dialogAlphaSlider.value = SettingsManager.DialogAlpha;
         isMuted = SettingsManager.IsMuted;
 
@@ -135,10 +135,10 @@ public class SettingsController : MonoBehaviour
 
     private void OnTextSpeedSliderChanged(float value)
     {
-        // 將 0-1 的 slider 值轉換為 0.02-0.005 的實際速度值
+        // 將 0-1 的 slider 值轉換為 0.02-0.05 的實際速度值
         // value 為 0 時得到 0.（最慢）
-        // value 為 1 時得到 0.005（最快）
-        tempTextSpeed = Mathf.Lerp(0.01f, 0.005f, value);
+        // value 為 1 時得到 0.05（最快）
+        tempTextSpeed = Mathf.Lerp(0.01f, 0.05f, value);
     }
 
     private void OnDialogAlphaSliderChanged(float value)
@@ -149,6 +149,7 @@ public class SettingsController : MonoBehaviour
     // 靜音按鈕點擊事件
     private void OnMuteButtonClick()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         if (backgroundMusic != null)
         {
             // 切換靜音狀態
@@ -175,6 +176,7 @@ public class SettingsController : MonoBehaviour
 
     public void OnConfirmSettings()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         SettingsManager.UpdateMusicVolume(tempMusicVolume);
         SettingsManager.UpdateGameVolume(tempGameVolume);
         SettingsManager.UpdateTextSpeed(tempTextSpeed);
@@ -189,6 +191,7 @@ public class SettingsController : MonoBehaviour
 
     public void OnCancelSettings()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         LoadCurrentSettings();
         FlowerSystem.textSpeed = SettingsManager.TextSpeed;
         FlowerSystem.dialogAlpha = SettingsManager.DialogAlpha;
@@ -203,6 +206,7 @@ public class SettingsController : MonoBehaviour
 
     public void OnResetToDefaults()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         musicVolumeSlider.value = SettingData.Defaults.MUSIC_VOLUME;
         gameVolumeSlider.value = SettingData.Defaults.Game_VOLUME;
         textSpeedSlider.value = SettingData.Defaults.TEXT_SPEED;

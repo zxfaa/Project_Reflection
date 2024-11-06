@@ -15,6 +15,7 @@ public class Show : MonoBehaviour
     }
     public void ActiveMainMenu()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         if (menu != null)         
             menu.SetActive(true);       //顯示選單        
         if (mainMenu != null)           //若此時按鈕有顯示        
@@ -30,6 +31,7 @@ public class Show : MonoBehaviour
 
     public void Back()
     {
+        AudioManager.Instance.PlayOneShot("ClickButton");
         if (menu != null)       
             menu.SetActive(false);       
         if (mainMenu != null)        

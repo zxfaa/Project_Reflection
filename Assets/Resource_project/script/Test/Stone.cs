@@ -76,6 +76,8 @@ public class Stone : MonoBehaviour
         }
         FindObjectOfType<InventorySystem>().UpdateUI();
         gameObject.SetActive(false);
+        FindObjectOfType<LibraConrtoller>().stoneGram = 0;
+        FindObjectOfType<LibraConrtoller>().LibraAnimate();
     }
 
     public void LibraStone()
@@ -97,6 +99,7 @@ public class Stone : MonoBehaviour
             else if (FindObjectOfType<InventorySystem>().isDragging)
             {
                 PutItem(FindObjectOfType<DragAndDrop>().item);
+                FindObjectOfType<LibraConrtoller>().SetStoneGram();
                 return;
             }
             else
@@ -158,7 +161,6 @@ public class Stone : MonoBehaviour
             }
             Debug.LogWarning(itemIndices[i]);
         }
-        FindObjectOfType<LibraConrtoller>().SetStoneGram();
         FindObjectOfType<DragAndDrop>().StopDragItem();
         int quantityToRemove = 1;
         FindObjectOfType<InventorySystem>().RemoveItem(item, quantityToRemove);

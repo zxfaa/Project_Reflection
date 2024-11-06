@@ -43,6 +43,7 @@ public class LeftToRightFadeController : MonoBehaviour
             // 逐漸增加 fadeValue，讓透明度從左往右淡出，最終完全透明
             fadeValue -= fadeSpeed * Time.deltaTime;
             material.SetFloat("_Fade", fadeValue);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             if (fadeValue <= -0.5)
                 gameObject.SetActive(false);
         }

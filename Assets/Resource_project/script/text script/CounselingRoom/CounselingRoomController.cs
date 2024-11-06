@@ -77,10 +77,13 @@ public class CounselingRoomController : MonoBehaviour
     {
         progress = 0;
         StartCoroutine(PlayAnimation());
+
     }
 
     private IEnumerator PlayAnimation()
     {
+        // 鎖定角色移動
+        FindObjectOfType<Player>().LockMovement(true);
         // 使 fadeImage 顯示
         fadeImage.gameObject.SetActive(true);
 
@@ -92,6 +95,7 @@ public class CounselingRoomController : MonoBehaviour
 
         Progress();
 
+        FindObjectOfType<Player>().LockMovement(false);
         // 觸發 "FadeOutTrigger" 動畫
         fadeAnimator.SetTrigger("FadeOutTrigger");
 
