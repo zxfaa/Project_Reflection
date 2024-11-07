@@ -21,11 +21,13 @@ public class PlayerData
 
     public List<EncyclopediaState> encyclopediaStates;  // 使用新的 List 來存儲圖鑑系統的進度
     public List<SubtitleState> subtitleStates; // 保存字幕系統的進度
+    public DateTime saveTime; //存檔時間
 
 
 
     public PlayerData(Player player , TeleportManager teleportManager)
     {
+        saveTime = DateTime.Now;  // 記錄當前時間
         SceneIndex = player.GetSceneIndex();
         position = new float[2];
         position[0] = player.transform.position.x;

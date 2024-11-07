@@ -114,7 +114,6 @@ public class Item : MonoBehaviour
                 OtherInteraction();
                 break;
             case InteractionType.NONE:
-                AudioManager.Instance.PlayOneShot("PickUpNothing");
                 break;
         }
 

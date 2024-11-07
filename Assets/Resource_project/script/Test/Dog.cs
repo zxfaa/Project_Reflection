@@ -12,6 +12,8 @@ public class Doge : MonoBehaviour
     private bool isPlayerInRange = false; // 記錄玩家是否在範圍內
     private bool isInteracting = false; // 紀錄是否正在互動
 
+    public GameObject player; // Player對象
+
     void Start()
     {
         fs = FlowerManager.Instance.GetFlowerSystem("default");    
@@ -82,9 +84,10 @@ public class Doge : MonoBehaviour
                 isInteracting = false;  
             }));
         });
-
+        // 查找 Player 下的 InventorySystem 组件
+        InventorySystem inventorySystem = player.GetComponentInChildren<InventorySystem>();
         //這裡放上有沒有蛋糕
-        if (true)
+        if (inventorySystem.items.Exists(item => item.index == 25))
         {
             fs.SetupButton("拿出蛋糕", () => {
                 fs.Resume();

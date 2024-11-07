@@ -21,7 +21,7 @@ public static class SaveManager
         try
         {
             File.WriteAllText(path, json);
-            Debug.Log("存檔已建立: " + path);
+            Debug.Log($"存檔已建立: {path} - 時間: {data.saveTime}");
         }
         catch (Exception e)
         {

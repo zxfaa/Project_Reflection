@@ -87,11 +87,13 @@ public class BookCase : MonoBehaviour
                     fs.SetupDialog("EnviromentDialogPrefab");
                     fs.SetTextList(new List<string> { "一塊作工精美的拼圖掉在你眼前[w][remove_dialog]" });
                     fs.RemoveButtonGroup();
-                    //StartCoroutine(WaitForDialogCompletion());
-                    //獲得道具
-                    Debug.Log("獲得道具");
-                    item.PickUpItem();
-                    HasItem = false;
+                    StartCoroutine(WaitForDialogCompletion(() =>
+                    {
+                        //獲得道具
+                        Debug.Log("獲得道具");
+                        item.PickUpItem();
+                        HasItem = false;
+                    }));
                 }
                 else
                 {
@@ -99,7 +101,10 @@ public class BookCase : MonoBehaviour
                     fs.SetTextList(new List<string> { "內部甚麼都沒有[w][remove_dialog]" });
                     fs.RemoveButtonGroup();
                 }
-                isInteracting = false;  // 重置交互标志
+                StartCoroutine(WaitForDialogCompletion(() =>
+                {
+                    isInteracting = false;  // 重置交互标志
+                }));
             });
             fs.SetupButton("關閉", () => {
                 fs.SetupDialog("PlayerDialogPrefab");

@@ -7,6 +7,8 @@ public class Puzzle : MonoBehaviour
     public GridLayoutGroup puzzleGrid; // 拼圖的網格佈局組件
     public List<Button> puzzlePieces;  // 拼圖塊的列表，包括空白塊
     public Button emptySlot;           // 空白塊的按鈕
+    public Sprite newImage;
+
     private int gridSize = 4;          // 定義拼圖的行列數（4x4）
     private List<int> puzzleState;     // 存儲拼圖塊的當前狀態
     private int emptySlotIndex;        // 空白塊的當前索引
@@ -29,7 +31,7 @@ public class Puzzle : MonoBehaviour
         }
 
         emptySlotIndex = puzzlePieces.Count - 1; // 將空白塊放在最後一個位置
-        ShufflePuzzle(); // 隨機打亂拼圖塊的位置
+        //ShufflePuzzle(); // 隨機打亂拼圖塊的位置
         UpdatePuzzleDisplay(); // 更新拼圖顯示
     }
 
@@ -145,7 +147,27 @@ public class Puzzle : MonoBehaviour
                 return;
             }
         }
-
+        ChangePuzzle();
         Debug.Log("Puzzle Solved!");
+    }
+
+    public void ChangePuzzle()
+    {
+        
+        emptySlot.onClick.RemoveAllListeners();
+        emptySlot.onClick.AddListener(() => NewEmptySlotAction("小塊拼圖"));
+    }
+
+    public void NewEmptySlotAction(string puzzle)
+    {
+        Image emptySlotImage = emptySlot.GetComponent<Image>();
+        string dragItemName = FindObjectOfType<DragAndDrop>().item.itemName;
+        if (dragItemName == puzzle && FindObjectOfType<InventorySystem>().isDragging)
+        {
+            emptySlotImage.sprite = newImage;
+            emptySlot.GetComponent<Item>().enabled = true;
+            Item item = emptySlot.GetComponent<Item>();
+            item.PickUpItem();
+        }
     }
 }
