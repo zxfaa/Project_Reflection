@@ -14,8 +14,6 @@ public class DialogueManager : MonoBehaviour
 
     private Dictionary<string, List<string>> dialogues = new Dictionary<string, List<string>>();
 
-
-
     [HideInInspector]
     public bool isInitialized = false;
 

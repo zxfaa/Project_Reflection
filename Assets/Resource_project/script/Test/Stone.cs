@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Stone : MonoBehaviour
 {
-    [Header("Àò±o¹D¨ã¦Cªí")]
+    [Header("ç²å¾—é“å…·åˆ—è¡¨")]
     public ItemData itemData;
     public int[] itemIndices;
     public int correctItemIndex;
@@ -113,7 +113,7 @@ public class Stone : MonoBehaviour
 
     private void UpdateUI()
     {
-        // §ó·s¹ÏÅ²UI
+        // æ›´æ–°åœ–é‘‘UI
         if (EncyclopediaUI.Instance != null)
         {
             Debug.Log("InteractionHandler: EncyclopediaUI.Instance found, calling UpdateUI");
@@ -128,16 +128,16 @@ public class Stone : MonoBehaviour
 
     private IEnumerator WaitForDialogToCloseAndPickUpItem()
     {
-        // µ¥«İ¤@¬q®É¶¡¡A¥H½T«O¹ï¸Ü®Ø¤w¸g¶}©lÅã¥Ü
-        yield return new WaitForSeconds(0.1f); // µu¼Èµ¥«İ
+        // ç­‰å¾…ä¸€æ®µæ™‚é–“ï¼Œä»¥ç¢ºä¿å°è©±æ¡†å·²ç¶“é–‹å§‹é¡¯ç¤º
+        yield return new WaitForSeconds(0.1f); // çŸ­æš«ç­‰å¾…
 
-        // ÀË¬d¹ï¸Ü®Ø¬O§_¦s¦b
+        // ï¿½Ë¬dï¿½ï¿½Ü®Ø¬Oï¿½_ï¿½sï¿½b
         while (GameObject.Find("DialogPanel"))
         {
-            yield return null; // ¨C´VÀË¬d¤@¦¸
+            yield return null; // æ¯å¹€æª¢æŸ¥ä¸€æ¬¡
         }
 
-        // ¹ï¸Ü®Ø®ø¥¢«á¡A°õ¦æ¾ß¬B¾Ş§@        
+        // å°è©±æ¡†æ¶ˆå¤±å¾Œï¼ŒåŸ·è¡Œæ’¿æ‹¾æ“ä½œ        
         ImageDisplayManager.Instance.QueueImagesWithFade(itemData, itemIndices);
     }
 

@@ -10,7 +10,7 @@ public class Chest : MonoBehaviour
     public int openTimes = 0;
     public bool isCorrect = false;
 
-    [SerializeField] private bool isTriggered = false;
+    [SerializeField] private bool isFirstEnd = false;
 
     private void Start()
     {
@@ -49,13 +49,13 @@ public class Chest : MonoBehaviour
 
     private void TriggerFunction()
     {
-        isTriggered = true;
+        isFirstEnd = true;
     }
 
     public void OpenExamine()
     {
         InteractionSystem interactionSystem = FindObjectOfType<InteractionSystem>();
-        if (interactionSystem.isExamine && isTriggered)
+        if (interactionSystem.isExamine && isFirstEnd)
             openTimes = openTimes + 1;
 
         if (openTimes == 1)

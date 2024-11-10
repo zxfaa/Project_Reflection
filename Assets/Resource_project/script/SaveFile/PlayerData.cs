@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using UnityEditor.Rendering;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class PlayerData
@@ -21,13 +22,13 @@ public class PlayerData
 
     public List<EncyclopediaState> encyclopediaStates;  // 使用新的 List 來存儲圖鑑系統的進度
     public List<SubtitleState> subtitleStates; // 保存字幕系統的進度
-    public DateTime saveTime; //存檔時間
+    public string saveTime; // 存檔時間
 
 
 
     public PlayerData(Player player , TeleportManager teleportManager)
     {
-        saveTime = DateTime.Now;  // 記錄當前時間
+        saveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); // 將 DateTime 轉換為字串
         SceneIndex = player.GetSceneIndex();
         position = new float[2];
         position[0] = player.transform.position.x;
@@ -47,9 +48,15 @@ public class PlayerData
 
         //初始化並保存InventorySystem的道具狀態
         itemStates = new List<ItemState>();
+        int[] excludeIndices = { 9, 10, 11, 12, 13, 14, 15, 16 };
+
         foreach (var item in InventorySystem.Instance.items)
         {
-            itemStates.Add(new ItemState(item.index, item.itemName, item.IsInteration));
+            // 檢查當前item的index是否在排除列表中
+            if (!excludeIndices.Contains(item.index))
+            {
+                itemStates.Add(new ItemState(item.index, item.itemName, item.IsInteration));
+            }
         }
 
         //初始化並保存所有StageEnviromentDialog的互動狀態

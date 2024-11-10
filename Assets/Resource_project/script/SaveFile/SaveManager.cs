@@ -48,7 +48,7 @@ public static class SaveManager
         }
         else
         {
-            Debug.LogWarning("存檔不存在: " + path);
+            Debug.LogWarning("存檔不存在，使用選定編號開始新遊戲" + path);
             return null;
         }
     }

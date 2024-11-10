@@ -13,6 +13,13 @@ public class Chapter
     public Button plotButton;            // 劇情按鈕，需控制其鎖定狀態
 }
 
+[System.Serializable]
+public class Extra
+{
+    public List<ItemData.Item> Extraitems;
+    public Button ExtraunlockButton;
+}
+
 public class EncyclopediaUI : MonoBehaviour
 {    
     public static EncyclopediaUI Instance { get; private set; }                                           // 圖鑑的單例實例    
@@ -23,6 +30,7 @@ public class EncyclopediaUI : MonoBehaviour
     public Image[] itemImages;                                                                            // 引用 Image 組件
     // 新增的 Extra 檢測區塊
     public Image[] extraItemImages; // Extra區塊的 UI 方塊
+    [SerializeField] public List <Extra> Extra;
     [SerializeField] private List<int> extraKeyItemIndexes; // 直接存儲 Extra 區塊要檢測的三個道具 index
     public static int ExtraCounter { get; private set; }
     public void Initialize()
@@ -62,6 +70,7 @@ public class EncyclopediaUI : MonoBehaviour
         InitializeSlots();       // 初始化圖鑑槽
         SubscribeToEvents();     // 訂閱事件
         UpdateUI();              // 更新 UI 狀態
+        UpdateExtraUI();
 
         foreach (var chapter in chapters)           // 初始化時隱藏所有按鈕
             chapter.unlockButton.gameObject.SetActive(false); 
@@ -355,6 +364,42 @@ public class EncyclopediaUI : MonoBehaviour
     // 檢查 Extra 區塊的三個關鍵道具是否已經拾取
     void UpdateExtraUI()
     {
+        foreach (var extra in Extra)
+        {
+            bool itemCollected = false;
+
+            // 逐一檢查 Extra 區塊的每個道具是否已獲取
+            foreach (var item in extra.Extraitems)
+            {
+                var key = new Tuple<string, int>(item.itemName, item.index);
+                bool hasItem = InventorySystem.Instance.HasItem(item.itemName, item.index);
+
+                if (hasItem)
+                {
+                    itemCollected = true;
+                    break; // 當一個道具被收集後即跳出，顯示對應的按鈕
+                }
+            }
+
+            // 如果 Extra 區塊的道具已收集，顯示並啟用對應的 unlockButton
+            if (itemCollected)
+            {
+                extra.ExtraunlockButton.gameObject.SetActive(true);
+                extra.ExtraunlockButton.interactable = true;
+                Debug.Log($"Extra 區塊 {extra.Extraitems[0].itemName} 的對應按鈕已啟用。");
+
+                // 記錄解鎖狀態，以便跨場景或重新進入時顯示按鈕
+                if (!EncyclopediaProgress.unlockedChapters.ContainsKey(extra.Extraitems[0].itemName))
+                {
+                    EncyclopediaProgress.unlockedChapters[extra.Extraitems[0].itemName] = true;
+                }
+            }
+            else
+            {
+                extra.ExtraunlockButton.gameObject.SetActive(false);
+                extra.ExtraunlockButton.interactable = false;
+            }
+        }
         for (int i = 0; i < extraKeyItemIndexes.Count; i++)
         {
             int keyItemIndex = extraKeyItemIndexes[i];

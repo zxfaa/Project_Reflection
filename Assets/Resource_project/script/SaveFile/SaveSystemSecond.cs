@@ -5,13 +5,18 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.VisualScripting;
 using System.Linq;
+using UnityEngine.UI;
+using TMPro;
 
 public class SaveSystemSecond : MonoBehaviour
 {
     public static SaveSystemSecond Instance { get; private set; }
     [SerializeField] private GameObject playerPrefab;
     private Player currentPlayer;
-    private int currentSlotNumber = 0; // 存檔編號
+
+    public static int currentPlayerNumber; // 全局唯一的遊玩編號
+    private int currentSlotNumber; // 存檔編號
+    public TextMeshProUGUI[] saveSlotTexts;  // 顯示存檔時間
 
     private Vector2 loadedPosition;
     private int loadedSceneIndex;
@@ -38,6 +43,7 @@ public class SaveSystemSecond : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        RestoreSaveTime();
         
     }
 
@@ -65,31 +71,61 @@ public class SaveSystemSecond : MonoBehaviour
     {
         PlayerData data = SaveManager.LoadPlayer(slotNumber); // 根據槽位選擇存檔
         levelLoader = FindObjectOfType<LevelLoader>();
+
         if (data != null)
         {
-            // 載入場景位置與索引
+            // 載入已存在的存檔
             loadedPosition = new Vector2(data.position[0], data.position[1]);
             loadedSceneIndex = data.SceneIndex;
-
-            currentSlotNumber = slotNumber; //將輸入的存檔編號替換為currentSlotNumber
-
-            // 標記為從存檔加載
-            isLoadingFromSave = true;
-
-            if (levelLoader != null)
-            {
-                levelLoader.LoadLevel(loadedSceneIndex);
-            }
-            else
-            {
-                Debug.LogError("LevelLoader not found.");
-            }
         }
         else
         {
-            Debug.Log("無法加載玩家存檔，請在一次");
+            loadedSceneIndex =1;
+        }
+
+        // 無論是否找到存檔，都更新當前玩家編號
+        currentSlotNumber = slotNumber;
+        currentPlayerNumber = currentSlotNumber;
+        Debug.Log($"根據存檔編號{currentPlayerNumber+1}開始遊戲。");
+
+        // 標記為從存檔加載
+        isLoadingFromSave = false;
+
+        if (levelLoader != null)
+        {
+            levelLoader.LoadLevel(loadedSceneIndex);
+        }
+        else
+        {
+            Debug.LogError("LevelLoader not found.");
         }
     }
+    public void StartGame(int SceneIndex)
+    {
+        isLoadingFromSave = false;
+        levelLoader = FindObjectOfType<LevelLoader>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            PlayerData data = SaveManager.LoadPlayer(i); // 根據槽位選擇存檔
+            if (data == null)
+            {
+                currentPlayerNumber = i;
+                currentSlotNumber = i;
+                levelLoader.LoadLevel(SceneIndex);
+                Debug.Log($"根據存檔編號{currentPlayerNumber + 1}開始遊戲。");
+                return; // 找到空位後立即返回，避免繼續執行後續代碼
+            }
+        }
+
+        // 如果 3 個存檔槽都已使用，則預設使用第 0 號存檔槽
+        currentPlayerNumber = 0;
+        currentSlotNumber = 0;
+        levelLoader.LoadLevel(SceneIndex);
+
+        Debug.Log($"所有存檔槽已滿，使用存檔編號{currentPlayerNumber + 1}開始遊戲。");
+    }
+
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -114,6 +150,7 @@ public class SaveSystemSecond : MonoBehaviour
 
         if (isLoadingFromSave)
         {
+            
             //解鎖場面上KeyObject互動
             RestoreKeyObjectStates(loadedData);
             //恢復物品到道具欄
@@ -137,6 +174,23 @@ public class SaveSystemSecond : MonoBehaviour
             //回復陰影狀態
             RestoreShadowState(loadedData); 
             isLoadingFromSave = false;
+        }
+    }
+
+    private void RestoreSaveTime()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            PlayerData data = SaveManager.LoadPlayer(i); // 加載第 i 個存檔
+            if (data != null)
+            {
+                saveSlotTexts[i].text = $"存檔時間: {data.saveTime}";
+
+            }
+            else
+            {
+                saveSlotTexts[i].text = "存檔空";
+            }
         }
     }
 
