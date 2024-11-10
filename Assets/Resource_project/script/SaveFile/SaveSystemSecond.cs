@@ -89,7 +89,7 @@ public class SaveSystemSecond : MonoBehaviour
         Debug.Log($"根據存檔編號{currentPlayerNumber+1}開始遊戲。");
 
         // 標記為從存檔加載
-        isLoadingFromSave = false;
+        isLoadingFromSave = true;
 
         if (levelLoader != null)
         {
@@ -266,6 +266,7 @@ public class SaveSystemSecond : MonoBehaviour
             {
                 itemInScene.interactionType = Item.InteractionType.NONE;
                 itemInScene.dialogueIndex = 0;
+                itemInScene.dialogueType = Item.DialogueType.Normal;
                 Debug.Log($"Item '{itemInScene.name}' interaction disabled based on saved data. All indices match and at least one interacted.");
             }
         }

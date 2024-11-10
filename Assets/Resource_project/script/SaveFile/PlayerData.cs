@@ -43,9 +43,12 @@ public class PlayerData
         //輔導室的進度
         counselingRoomCompleted = CounselingRoomController.IsEnd;
 
-        //陰影的保存狀態
-        ShadowTrigger = CorridorShadow.ShadowTrigger;
-
+        //陰影的保存狀態，場景2專屬
+        if(SceneIndex == 4)
+        {
+            ShadowTrigger = CorridorShadow.ShadowTrigger;
+        }
+       
         //初始化並保存InventorySystem的道具狀態
         itemStates = new List<ItemState>();
         int[] excludeIndices = { 9, 10, 11, 12, 13, 14, 15, 16 };
@@ -83,17 +86,22 @@ public class PlayerData
 
         // 保存目前的 CameraConfinerIndex
         CameraConfinerIndex = teleportManager.GetCurrentConfinerIndex();
+        
         // 檢查 `bookcase_with_item` 是否存在並保存其狀態
-        GameObject bookWithItemObject = GameObject.Find("bookcase_with_item");
-        if (bookWithItemObject != null)
+        if(SceneIndex == 7)
         {
-            BookCase bookWithItem = bookWithItemObject.GetComponent<BookCase>();
-            bookHasItem = bookWithItem.HasItem; // 記錄物品的狀態
+            GameObject bookWithItemObject = GameObject.Find("bookcase_with_item");
+            if (bookWithItemObject != null)
+            {
+                BookCase bookWithItem = bookWithItemObject.GetComponent<BookCase>();
+                bookHasItem = bookWithItem.HasItem; // 記錄物品的狀態
+            }
+            else
+            {
+                Debug.Log("未找到 `BookCase` 組件！");
+            }
         }
-        else
-        {
-            Debug.Log("未找到 `BookCase` 組件！");
-        }
+       
 
 
         // 初始化并保存所有章节和道具状态

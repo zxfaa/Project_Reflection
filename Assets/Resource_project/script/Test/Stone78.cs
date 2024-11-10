@@ -55,6 +55,7 @@ public class Stone78 : MonoBehaviour
         {
             Debug.Log("Trigger Animate");
             tableType.interactionType = Item.InteractionType.PickUp;
+            tableType.dialogueType = Item.DialogueType.Normal;
             classroomType.interactionType = Item.InteractionType.PickUp;
             classroomType.dialogueIndex = 1;
         }

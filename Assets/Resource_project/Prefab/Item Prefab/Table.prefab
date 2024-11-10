@@ -745,7 +745,7 @@ MonoBehaviour:
   slots: []
   openTimes: 0
   isCorrect: 0
-  isTriggered: 0
+  isFirstEnd: 1
 --- !u!1 &2429864561733484323
 GameObject:
   m_ObjectHideFlags: 0
