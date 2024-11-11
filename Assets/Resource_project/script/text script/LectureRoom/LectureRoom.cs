@@ -278,8 +278,8 @@ public class LectureRoom : MonoBehaviour
 
     private IEnumerator ShowErrorMessage()
     {
-        fs.SetupDialog("EnviromentDialogPrefab");
-        fs.SetTextList(new List<string> { "嗯.....[w]好像不太對喔....[w]但是沒關係，我們還有接下來的題目[w][remove_dialog]" });
+        fs.SetupDialog("PlotDialogPrefab");
+        fs.SetTextList(new List<string> { "哦....聽起來有人答錯了哦....[w]但是不要這麼早放棄，我們還有接下來的題目![w][remove_dialog]" });
 
 
         yield return new WaitUntil(() => fs.isCompleted);
@@ -288,8 +288,8 @@ public class LectureRoom : MonoBehaviour
 
     private IEnumerator ShowEndMessage()
     {
-        fs.SetupDialog("EnviromentDialogPrefab");
-        fs.SetTextList(new List<string> { "錯的有點多喔，妳真的有在狀況內嗎?[w]又或者妳還是不知道呢?[w] [remove_dialog]" });
+        fs.SetupDialog("PlotDialogPrefab");
+        fs.SetTextList(new List<string> { "叭叭，聽起來有人已經出局囉~下次，還有機會的，如果還有下次的話![w]我：下次...?[w]抬起頭，卻發現空無一人[w]" });
         yield return new WaitUntil(() => fs.isCompleted);
 
         //關閉當前畫面
@@ -314,8 +314,8 @@ public class LectureRoom : MonoBehaviour
     //完成後顯示
     public IEnumerator ShowWinMessage() 
     {
-        fs.SetupDialog("EnviromentDialogPrefab");
-        fs.SetTextList(new List<string> { "@{./!,&.\"$$'\">%~[w] 頭上的廣播傳出了異樣的雜音[w][play_end]" });
+        fs.SetupDialog("PlotDialogPrefab");
+        fs.SetTextList(new List<string> { "....下一題呢?[w]我抬起頭，卻發現空無一人。[play_end]" });
         yield return new WaitUntil(() => fs.isCompleted);
         yield return new WaitForSeconds(1.5f);
         CloseInteration();

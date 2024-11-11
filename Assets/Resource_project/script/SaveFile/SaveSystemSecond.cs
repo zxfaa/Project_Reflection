@@ -126,6 +126,26 @@ public class SaveSystemSecond : MonoBehaviour
         Debug.Log($"所有存檔槽已滿，使用存檔編號{currentPlayerNumber + 1}開始遊戲。");
     }
 
+    public bool GetPlayerDataExist(int slotNumber)
+    {
+        return SaveManager.LoadPlayer(slotNumber) != null;
+    }
+    public string GetPlayerDataTime(int slotNumber)
+    {
+        PlayerData data = SaveManager.LoadPlayer(slotNumber);
+
+        // 檢查是否有存檔資料，避免空引用
+        if (data != null)
+        {
+            return data.saveTime.ToString();  // 假設 `saveTime` 是 DateTime 類型
+        }
+        else
+        {
+            return "無存檔資料";  // 當沒有存檔資料時返回的預設值
+        }
+    }
+
+
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
